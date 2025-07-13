@@ -16,13 +16,13 @@ class line:
 
 def countdown():
     for i in range(3, 0, -1):
-        print(f"{line.RED}Auto close window after: {i}...")
+        print(f"{line.RED}Tự động đóng cửa sổ sau: {i}...")
         time.sleep(1)
     exit()
 
 def retry(is_advanced_download):
     if is_advanced_download == True:
-        print(f"{line.BOLD}{line.GREEN}Continue download? (Y/F/M/N)\n")
+        print(f"{line.BOLD}{line.GREEN}Tiếp tục tải? (Y/F/M/N)\n")
         while True:
             key = msvcrt.getch().decode('latin-1').lower()
             if key == "y":
@@ -40,7 +40,7 @@ def retry(is_advanced_download):
                 countdown()
                 break
     else:
-        print(f"{line.BOLD}{line.GREEN}Continue download?  (Y/N)\n")
+        print(f"{line.BOLD}{line.GREEN}Tiếp tục tải? (Y/N)\n")
         while True:
             key = msvcrt.getch().decode('latin-1').lower()
             if key == "y":
@@ -55,21 +55,21 @@ def rename(download_dir, vid_id, new_name):
         try:
             os.rename(os.path.expanduser('~') + f"\\Downloads\\{vid_id}.mp4", os.path.expanduser('~') + f"\\Downloads\\{new_name}.mp4")
         except FileNotFoundError:
-            print(f"\n{line.RED}{line.BOLD}Error: '{vid_id}.mp4' not found ")
+            print(f"\n{line.RED}{line.BOLD}Lỗi: Không tìm thấy file '{vid_id}.mp4'. ")
         except FileExistsError:
-            print(f"\n{line.RED}{line.BOLD}Error: File '{new_name}.mp4' has existed.")
+            print(f"\n{line.RED}{line.BOLD}Lỗi: File '{new_name}.mp4' đã tồn tại.")
         except Exception as e:
-            print(f"\n{line.RED}{line.BOLD}Something went wrong: {e}")
+            print(f"\n{line.RED}{line.BOLD}Đã xảy ra lỗi: {e}")
     else:
         try:
             os.rename(f"{os.path.expanduser('~') + "\\Downloads\\"}{vid_id}.mp4", f"{os.path.expanduser('~') + "\\Downloads\\"}{new_name}.mp4")
             shutil.move(f"{os.path.expanduser('~') + "\\Downloads\\"}{new_name}.mp4", f"{download_dir}\\{new_name}.mp4")
         except FileNotFoundError:
-            print(f"\n{line.RED}{line.BOLD}Error: '{vid_id}.mp4' not found ")
+            print(f"\n{line.RED}{line.BOLD}Lỗi: Không tìm thấy file '{vid_id}.mp4'. ")
         except FileExistsError:
-            print(f"\n{line.RED}{line.BOLD}Error: File '{new_name}.mp4' has existed.")
+            print(f"\n{line.RED}{line.BOLD}Lỗi: File '{new_name}.mp4' đã tồn tại.")
         except Exception as e:
-            print(f"\n{line.RED}{line.BOLD}Something went wrong: {e}")
+            print(f"\n{line.RED}{line.BOLD}Đã xảy ra lỗi: {e}")
 
 def authenticate(vid_id):
     if vid_id == "f":
@@ -82,19 +82,19 @@ def authenticate(vid_id):
         retry(is_advanced_download = True)
 
 def main():
-    name = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter the name of anime series you want to download: {line.RESET}"))
+    name = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập tên của bộ anime cần tải: {line.RESET}"))
     authenticate(name)
-    ep = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter the number of episode: {line.RESET}"))
-    vid_id = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter vid_id of anime episode: {line.RESET}"))
-    download_dir = input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter download directory (Press Enter to download the file to the Downloads folder): {line.RESET}").replace('"','')
-    file_name = f"Ep {ep} - {name}"
+    ep = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập số tập của bộ anime cần tải: {line.RESET}"))
+    vid_id = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập vid_id của tập anime: {line.RESET}"))
+    download_dir = input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập đường dẫn tải anime về (Để trống khi tải vào thư mục Downloads): {line.RESET}").replace('"','')
+    file_name = f"Tập {ep} - {name}"
 
     if download_dir == "":
-        print(f"{line.BOLD}{line.YELLOW}Downloading to Downloads folder...{line.RESET}")
+        print(f"{line.BOLD}{line.YELLOW}Đang tiến hành tải vào thư mục Downloads...{line.RESET}")
         subprocess.run(f'java -jar abyss-dl.jar {vid_id} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_id}.mp4' , text=True, check=False)
         rename(download_dir, vid_id, file_name)
     else:
-        print(f"{line.BOLD}{line.YELLOW}Downloading to {line.RESET}{download_dir} {line.BOLD}{line.YELLOW}folder...")
+        print(f"{line.BOLD}{line.YELLOW}Đang tiến hành tải vào thư mục {download_dir}...{line.RESET}")
         subprocess.run(f'java -jar abyss-dl.jar {vid_id} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_id}.mp4' , text=True, check=False)  
         rename(download_dir, vid_id, file_name)     
     retry(is_advanced_download = False)
@@ -102,9 +102,9 @@ def main():
 
 if __name__ == "__main__":
     os.system('cls')
-    print(f"{line.BOLD}{line.CYAN}Anime Downloader From Abyss / HydraX Server")
+    print(f"{line.BOLD}{line.CYAN}Trình Tải Anime Từ Server Abyss / HydraX")
     try:
         main()
     except Exception as e:
-        print(f"{line.RED}{line.BOLD}Something went wrong: \n{e}")
-        input("Press Enter to close window")
+        print(f"{line.RED}{line.BOLD}Đã có lỗi xảy ra: \n{e}")
+        input("Nhấn Enter để đóng cửa sổ")
