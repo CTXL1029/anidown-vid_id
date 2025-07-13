@@ -39,7 +39,7 @@ def downloader(name, ep, vid_id, download_dir):
     file_name = f"Tập {ep} - {name}"
 
     print(f"{line.BOLD}{line.YELLOW}\nĐang tải {file_name}.mp4...")
-    subprocess.run(f'java -jar "E:\\Quick Access\\App Python\\Anime Downloader\\abyss-dl.jar" {vid_id} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_id}.mp4' , text=True, check=False)
+    subprocess.run(f'java -jar abyss-dl.jar {vid_id} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_id}.mp4' , text=True, check=False)
     rename(download_dir, vid_id, file_name)
 
 def start():

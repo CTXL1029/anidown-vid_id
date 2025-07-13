@@ -31,7 +31,7 @@ def downloader(name, eps, seasons, download_dir, vid_ids):
         else: file_name = f"Tập {eps[i]} (Phần {seasons}) - {name}"
 
         print(f"{line.BOLD}{line.YELLOW}\nĐang tải {file_name}.mp4...")
-        subprocess.run(f'java -jar "E:\\Quick Access\\App Python\\Anime Downloader\\abyss-dl.jar" {vid_ids[i]} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_ids[i]}.mp4' , text=True, check=False)
+        subprocess.run(f'java -jar abyss-dl.jar {vid_ids[i]} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_ids[i]}.mp4' , text=True, check=False)
         rename(download_dir, vid_ids[i], file_name)
 
 def lists_vids(ep_start, ep_end):
