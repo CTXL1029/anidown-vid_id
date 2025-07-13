@@ -1,4 +1,5 @@
 # Download anime using vid_id of HydraX / Abyss.to video server
+Hướng dẫn tiếng Việt [ở đây](https://github.com/CTXL1029/anidown-vid_id/blob/main/Vietnamese%20Version/README.md)
 # How to use:
 1. Install Python [here](https://www.python.org/downloads/)
 2. Download the latest release version [here](https://github.com/CTXL1029/anidown-vid_id/releases)
