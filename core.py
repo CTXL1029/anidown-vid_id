@@ -87,7 +87,9 @@ def main():
     ep = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter the number of episode: {line.RESET}"))
     vid_id = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter vid_id of anime episode: {line.RESET}"))
     download_dir = input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter download directory (Press Enter to download the file to the Downloads folder): {line.RESET}").replace('"','')
-    file_name = f"Ep {ep} - {name}"
+    if "Movie" in ep:
+        file_name = f"{ep} - {name}"
+    else: file_name = f"Ep {ep} - {name}"
 
     if download_dir == "":
         print(f"{line.BOLD}{line.YELLOW}Downloading to Downloads folder...{line.RESET}")

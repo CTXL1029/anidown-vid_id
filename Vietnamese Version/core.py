@@ -87,7 +87,9 @@ def main():
     ep = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập số tập của bộ anime cần tải: {line.RESET}"))
     vid_id = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập vid_id của tập anime: {line.RESET}"))
     download_dir = input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập đường dẫn tải anime về (Để trống khi tải vào thư mục Downloads): {line.RESET}").replace('"','')
-    file_name = f"Tập {ep} - {name}"
+    if "Movie" in ep:
+        file_name = f"{ep} - {name}"
+    else: file_name = f"Tập {ep} - {name}"
 
     if download_dir == "":
         print(f"{line.BOLD}{line.YELLOW}Đang tiến hành tải vào thư mục Downloads...{line.RESET}")
