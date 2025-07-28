@@ -64,7 +64,7 @@ def start():
     
     if download_dir == "":
         print(f"{line.BOLD}{line.LIGHT_ORANGE}Đang tiến hành tải vào thư mục: Downloads{line.RESET}...")
-    else: print(f"{line.BOLD}{line.LIGHT_ORANGE}Đang tiến hành tải vào thư mục: {line.RESET}{download_dir}...")
+    else: print(f"{line.BOLD}{line.LIGHT_ORANGE}Đang tiến hành tải vào thư mục: {line.RESET}{download_dir}{line.BOLD}{line.LIGHT_ORANGE}...")
     
     for run in range(series):
         downloader(names[run], eps[run], vid_ids[run], download_dir)   

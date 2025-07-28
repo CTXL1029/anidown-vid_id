@@ -96,7 +96,7 @@ def main():
         subprocess.run(f'java -jar abyss-dl.jar {vid_id} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_id}.mp4' , text=True, check=False)
         rename(download_dir, vid_id, file_name)
     else:
-        print(f"{line.BOLD}{line.YELLOW}Đang tiến hành tải vào thư mục {download_dir}...{line.RESET}")
+        print(f"{line.BOLD}{line.YELLOW}Đang tiến hành tải vào thư mục {line.RESET}{download_dir}{line.BOLD}{line.YELLOW}...")
         subprocess.run(f'java -jar abyss-dl.jar {vid_id} h -o {os.path.expanduser('~') + "\\Downloads\\"}{vid_id}.mp4' , text=True, check=False)  
         rename(download_dir, vid_id, file_name)     
     retry(is_advanced_download = False)

@@ -58,5 +58,5 @@ def start():
     download_dir = input(f"{line.BOLD}{line.LIGHT_ORANGE}Nhập đường dẫn tải anime về: {line.RESET}").replace('"','')
     vid_ids, eps = lists_vids(ep_start, ep_end)
     
-    print(f"{line.BOLD}{line.LIGHT_ORANGE}Đang tiến hành tải vào thư mục: {line.RESET}{download_dir}...")
+    print(f"{line.BOLD}{line.LIGHT_ORANGE}Đang tiến hành tải vào thư mục: {line.RESET}{download_dir}{line.BOLD}{line.LIGHT_ORANGE}...")
     downloader(name, eps, seasons, download_dir, vid_ids)   
