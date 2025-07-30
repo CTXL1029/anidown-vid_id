@@ -1,6 +1,6 @@
 # Tải anime sử dụng vid_id của máy chủ HydraX / Abyss.to
 # Cách sử dụng:
-1. Cài đặt Python [ở đây](https://www.python.org/downloads/)
+1. Cài đặt Python [ở đây](https://www.python.org/downloads/) và Java [ở đây](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
 2. Tải phiên bản phát hành chính thức mới nhất [ở đây](https://github.com/CTXL1029/anidown-vid_id/releases)
 3. Chạy tệp core.py | Bạn không biết chạy tệp python sao? Tìm trên YouTube đi ^_~
 4. Giờ thực hiện theo trình tự trên màn hình nào!!!
