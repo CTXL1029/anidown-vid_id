@@ -26,16 +26,17 @@ def retry(is_advanced_download):
         while True:
             key = msvcrt.getch().decode('latin-1').lower()
             if key == "y":
+                os.system('cls')
                 main()
-                break
+                retry(is_advanced_download = False)
             elif key == "f":
                 os.system('cls')
                 full_series_download.start()
-                break
+                retry(is_advanced_download = True)
             elif key == "m":
                 os.system('cls')
                 multiple_series_download.start()
-                break            
+                retry(is_advanced_download = True)            
             elif key == "n":
                 countdown()
                 break
@@ -44,8 +45,9 @@ def retry(is_advanced_download):
         while True:
             key = msvcrt.getch().decode('latin-1').lower()
             if key == "y":
+                os.system('cls')
                 main()
-                break
+                retry(is_advanced_download = False)
             elif key == "n":
                 countdown()
                 break        
@@ -82,6 +84,7 @@ def authenticate(vid_id):
         retry(is_advanced_download = True)
 
 def main():
+    print(f"{line.BOLD}{line.CYAN}Anime Downloader From Abyss / HydraX Server")
     name = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter the name of anime series you want to download: {line.RESET}"))
     authenticate(name)
     ep = str(input(f"{line.BOLD}{line.LIGHT_ORANGE}Enter the number of episode: {line.RESET}"))
@@ -104,7 +107,6 @@ def main():
 
 if __name__ == "__main__":
     os.system('cls')
-    print(f"{line.BOLD}{line.CYAN}Anime Downloader From Abyss / HydraX Server")
     try:
         main()
     except Exception as e:
