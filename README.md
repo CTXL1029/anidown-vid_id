@@ -1,3 +1,5 @@
+> [!IMPORTANT]
+> # This repo is out of date, time to move to [a new repo](https://github.com/CTXL1029/HydraX-Abyss_Video_Downloader)!
 # Download anime using vid_id of HydraX / Abyss.to video server
 Hướng dẫn tiếng Việt [ở đây](https://github.com/CTXL1029/anidown-vid_id/blob/main/Vietnamese%20Version/README.md)
 # How to use:
